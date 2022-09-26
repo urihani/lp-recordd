@@ -20,6 +20,6 @@ public class Label {
     /**
      * 
      */
-    private string nom;
+    private String nom;
 
 }
