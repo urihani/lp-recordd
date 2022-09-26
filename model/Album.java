@@ -1,3 +1,6 @@
+package model;
+
+import data.GENRE_MUSICAL;
 
 import java.time.LocalDate;
 import java.util.*;
