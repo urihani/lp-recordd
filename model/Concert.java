@@ -8,25 +8,25 @@ import java.time.LocalDate;
 public class Concert extends Evenement {
 
     /**
-     * Default constructor
-     */
-    public Concert() {
-    }
-
-    /**
-     * 
+     * date du concert
      */
     private LocalDate date;
 
     /**
-     * 
+     * heure du concert
      */
     private LocalDate heureDebut;
 
     /**
-     * 
+     * heure de fin du concert
      */
     private LocalDate heureFin;
+
+    /**
+     * Default constructor
+     */
+    public Concert() {
+    }
 
     public LocalDate getDate() {
         return date;

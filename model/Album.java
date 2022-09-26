@@ -11,35 +11,35 @@ import java.util.*;
 public class Album {
 
     /**
-     * Default constructor
-     */
-    public Album() {
-    }
-
-    /**
-     * 
+     * id de l'album
      */
     private UUID id;
 
     /**
-     * 
+     * nom de l'album
      */
     private String nom;
 
     /**
-     * 
+     * date de sortie de l'album
      */
     private LocalDate dateDeSortie;
 
     /**
-     * 
+     * nombre de like de l'album
      */
     private int nombreDeLike;
 
     /**
-     * 
+     * genre de l'album
      */
     private GENRE_MUSICAL genre;
+
+    /**
+     * Default constructor
+     */
+    public Album() {
+    }
 
     public UUID getId() {
         return id;

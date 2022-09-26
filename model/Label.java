@@ -8,20 +8,20 @@ import java.util.*;
 public class Label {
 
     /**
-     * Default constructor
-     */
-    public Label() {
-    }
-
-    /**
-     * 
+     * id du label
      */
     private UUID id;
 
     /**
-     * 
+     * nom du label
      */
     private String nom;
+
+    /**
+     * Default constructor
+     */
+    public Label() {
+    }
 
     public UUID getId() {
         return id;

@@ -8,25 +8,25 @@ import java.util.*;
 public abstract class Evenement {
 
     /**
-     * Default constructor
-     */
-    public Evenement() {
-    }
-
-    /**
-     * 
+     * id de l'evenement
      */
     private UUID id;
 
     /**
-     * 
+     * nom de l'evenement
      */
     private String nom;
 
     /**
-     * 
+     * adresse de l'événement
      */
     private String adresse;
+
+    /**
+     * Default constructor
+     */
+    public Evenement() {
+    }
 
     public UUID getId() {
         return id;

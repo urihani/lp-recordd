@@ -12,45 +12,45 @@ import java.util.*;
 public class Morceau {
 
     /**
-     * Default constructor
-     */
-    public Morceau() {
-    }
-
-    /**
-     * 
+     * id du morceau
      */
     private UUID id;
 
     /**
-     * 
+     * titre du morceau
      */
     private String titre;
 
     /**
-     * 
+     * durée du morceau
      */
     private LocalTime duree;
 
     /**
-     * 
+     * genre du morceau
      */
     private GENRE_MUSICAL genre;
 
     /**
-     * 
+     * date de sortie du morceau
      */
     private LocalDate dateDeSortie;
 
     /**
-     * 
+     * nombre ecoute du morceau
      */
     private int nombreEcoute;
 
     /**
-     * 
+     * nombre de like du morceau
      */
     private int nombreLike;
+
+    /**
+     * Default constructor
+     */
+    public Morceau() {
+    }
 
     public UUID getId() {
         return id;
