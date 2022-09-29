@@ -36,10 +36,27 @@ public class Album {
     private GENRE_MUSICAL genre;
 
     /**
+     * liste des morceaux de l'album
+     */
+    private List<Morceau> morceaux;
+
+    /**
+     * Liste des artistes de l'album 1..*
+     */
+    private HashMap<UUID, Artiste> artistes = new HashMap<>();
+
+
+    /**
      * Default constructor
      */
-    public Album() {
+    public Album(String nom, Artiste artiste, List<Morceau> morceaux, GENRE_MUSICAL genre) {
+        this.id = UUID.randomUUID();
+        this.nom = nom;
+        this.morceaux = morceaux;
+        this.genre = genre;
+        this.artistes.put(artiste.getId(), artiste);
     }
+
 
     public UUID getId() {
         return id;
@@ -47,6 +64,22 @@ public class Album {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public List<Morceau> getMorceaux() {
+        return morceaux;
+    }
+
+    public void setMorceaux(List<Morceau> morceaux) {
+        this.morceaux = morceaux;
+    }
+
+    public HashMap<UUID, Artiste> getArtistes() {
+        return artistes;
+    }
+
+    public void setArtistes(HashMap<UUID, Artiste> artistes) {
+        this.artistes = artistes;
     }
 
     public String getNom() {
