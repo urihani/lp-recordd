@@ -25,7 +25,9 @@ public abstract class Evenement {
     /**
      * Default constructor
      */
-    public Evenement() {
+    public Evenement(String nom) {
+        this.id = UUID.randomUUID();
+        this.nom = nom;
     }
 
     public UUID getId() {

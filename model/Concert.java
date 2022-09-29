@@ -25,7 +25,11 @@ public class Concert extends Evenement {
     /**
      * Default constructor
      */
-    public Concert() {
+    public Concert(String nom, LocalDate date, LocalDate heureDebut, LocalDate heureFin) {
+        super(nom);
+        this.date = date;
+        this.heureDebut = heureDebut;
+        this.heureFin = heureFin;
     }
 
     public LocalDate getDate() {

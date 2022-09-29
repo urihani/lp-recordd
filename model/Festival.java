@@ -32,7 +32,8 @@ public class Festival extends Evenement {
     /**
      * Default constructor
      */
-    public Festival(LocalDate dateDebut, LocalDate dateFin) {
+    public Festival(String nom, LocalDate dateDebut, LocalDate dateFin) {
+        super(nom);
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.programmes = new LinkedList<Programmation>();

@@ -56,14 +56,14 @@ public class Artiste {
     /**
      * Default constructor
      */
-    public Artiste(String pseudonyme, String nom, String prenom, String mail, String telephone, int nombreAuditeurs) {
+    public Artiste(String pseudonyme, String nom, String prenom, String mail, String telephone, String nombreAuditeurs) {
         this.id = UUID.randomUUID();
         this.pseudonyme = pseudonyme;
         this.nom = nom;
         this.prenom = prenom;
         this.mail = mail;
         this.telephone = telephone;
-        this.nombreAuditeurs = nombreAuditeurs;
+        this.nombreAuditeurs = Integer.parseInt(nombreAuditeurs);
         this.dateInscription = LocalDate.now();
     }
 
