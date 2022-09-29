@@ -30,9 +30,21 @@ public class Programmation {
     private float DUREE;
 
     /**
-     * Default constructor
+     * Artiste de la programmation
      */
-    public Programmation() {
+    private Artiste artiste;
+
+    /**
+     * Festival de la programmation
+     */
+    private Festival festival;
+
+    /**
+     * Contructeur de la programmation
+     */
+    public Programmation(Artiste artiste, Festival festival) {
+        addArtiste(artiste);
+        addFestival(festival);
     }
 
     public UUID getId() {
@@ -66,4 +78,22 @@ public class Programmation {
     public void setDUREE(float DUREE) {
         this.DUREE = DUREE;
     }
+
+    /**
+     * Ajouter un artiste à la programmation
+     * @return Artiste
+     */
+    public void addArtiste(Artiste artiste) {
+        this.artiste = artiste;
+    }
+
+    /**
+     * Ajouter un festival à la programmation
+     */
+    public void addFestival(Festival festival) {
+        this.festival = festival;
+    }
+
+
+
 }
