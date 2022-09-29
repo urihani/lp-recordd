@@ -1,3 +1,4 @@
+import common.SaisieMorceau;
 import model.Artiste;
 import model.Festival;
 import model.Label;
@@ -19,7 +20,7 @@ public class Main {
 
             // Liste des festivals présent dans l'application
             ArrayList<Festival> festivals = new ArrayList<Festival>();
-            festivals.add(new Festival(dateDebut, dateFin));
+            festivals.add(new Festival("ldf", dateDebut, dateFin));
 
             // On créer un bollean pour vérifier que le label existe ou non
             boolean labelExist = false;
@@ -48,14 +49,15 @@ public class Main {
                 System.out.println("2. Supprimer un artiste");
                 System.out.println("3. Afficher la liste des artistes");
                 System.out.println("4. Ajouter un artiste à un festival");
-                System.out.println("5. Se deconnecter");
-                System.out.println("6. Ajouter un morceau");
+                System.out.println("5. Afficher un artiste présent à un festival");
+                System.out.println("6. Se deconnecter");
+                System.out.println("7. Ajouter un morceau");
 
                 // On vérifie la valeur saisie par l'utilisateur
                 String choixASaisir = sc.nextLine();
                 int choix = Integer.parseInt(choixASaisir);
 
-                while (choix < 1 || choix > 6) {
+                while (choix < 1 || choix > 7) {
                     System.out.println("Veuillez entrer un choix valide :");
                     choix = sc.nextInt();
                 }
@@ -75,10 +77,12 @@ public class Main {
                         System.out.println("Veuillez entrer le numéro de téléphone de l'artiste :");
                         String telephone = sc.nextLine();
                         System.out.println("Veuillez entrer le nombre d'auditeurs de l'artiste");
-                        int nbAuditeurs = sc.nextInt();
+                        String nbAuditeurs = sc.nextLine();
 
                         // Créer un nouvel artiste avec toutes ces informations
                         Artiste artiste = new Artiste(pseudonyme, nom, prenom, mail, telephone, nbAuditeurs);
+                        // Ajouter l'artiste au label
+                        labelConnected.addArtiste(artiste);
 
                         System.out.println("L'artiste a bien été ajouté.");
 
@@ -121,12 +125,37 @@ public class Main {
                         }
                         break;
                     case 5:
+                        System.out.println("Vous avez choisi d'afficher un artiste présent à un festival. Veuillez entrer le pseudonyme de l'artiste :");
+                        String pseudonymeArtisteFestival = sc.nextLine();
+                        // On vérifie que l'artiste est dans la liste des artistes du label
+                        if (labelConnected.getArtiste(pseudonymeArtisteFestival) != null) {
+                            System.out.println("Veuillez entrer le nom du festival :");
+                            String nomFestival = sc.nextLine();
+                            // On vérifie que le festival existe
+                            for (Festival festival : festivals) {
+                                if (festival.getNom().equals(nomFestival)) {
+                                    for (Artiste artisteFestival : festival.getArtistes()) {
+                                        if (artisteFestival.getPseudonyme().equals(pseudonymeArtisteFestival)) {
+                                            System.out.println("L'artiste est présent au festival");
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                }
+                            }
+                        } else {
+                            System.out.println("L'artiste n'existe pas dans votre label");
+                        }
+                        break;
+                    case 6:
                         System.out.println("Vous avez choisi de vous déconnecter");
                         // On déconnecte le label
                         labelConnected = null;
                         labelExist = false;
                         break;
-
+                    case 7:
+                        SaisieMorceau.SaisirMorceau(labelConnected);
+                        break;
                 }
 
             }

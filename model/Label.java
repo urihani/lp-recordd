@@ -28,8 +28,8 @@ public class Label {
         this.id = UUID.randomUUID();
         this.nom = nom;
         this.artistes = new LinkedList<Artiste>();
-        artistes.add(new Artiste("Ily", "IlyasTest", "Ilyas", "ilyas@gmail.com", "0781823578", 4));
-        artistes.add(new Artiste("Nat", "NathanTest", "Nathan", "nathan@gmail.com", "0678339875", 4));
+        artistes.add(new Artiste("Ily", "IlyasTest", "Ilyas", "ilyas@gmail.com", "0781823578", "4"));
+        artistes.add(new Artiste("Nat", "NathanTest", "Nathan", "nathan@gmail.com", "0678339875", "4"));
     }
 
     public UUID getId() {
