@@ -1,6 +1,6 @@
+package model;
 
 import java.time.LocalDate;
-import java.util.*;
 
 /**
  * 
@@ -8,20 +8,20 @@ import java.util.*;
 public class Festival extends Evenement {
 
     /**
-     * Default constructor
-     */
-    public Festival() {
-    }
-
-    /**
-     * 
+     * date de début du festival
      */
     private LocalDate dateDebut;
 
     /**
-     * 
+     * date de fin du festival
      */
     private LocalDate dateFin;
+
+    /**
+     * Default constructor
+     */
+    public Festival() {
+    }
 
     public LocalDate getDateDebut() {
         return dateDebut;

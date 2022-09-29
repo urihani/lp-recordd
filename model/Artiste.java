@@ -1,3 +1,4 @@
+package model;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -8,51 +9,50 @@ import java.util.*;
 public class Artiste {
 
     /**
-     * Default constructor
-     */
-    public Artiste() {
-    }
-
-
-    /**
-     * 
+     * id de l'artiste
      */
     private UUID id;
 
     /**
-     * 
+     * pseudo de l'artiste
      */
     private String pseudonyme;
 
     /**
-     * 
+     * nom de l'artiste
      */
     private String nom;
 
     /**
-     * 
+     * prenom de l'artiste
      */
     private String prenom;
 
     /**
-     * 
+     * mail de l'artiste
      */
     private String mail;
 
     /**
-     * 
+     * telephone de l'artiste
      */
     private String telephone;
 
     /**
-     * 
+     * nombre d'auditeurs
      */
     private int nombreAuditeurs;
 
     /**
-     * 
+     * date inscription
      */
     private LocalDate dateInscription;
+
+    /**
+     * Default constructor
+     */
+    public Artiste() {
+    }
 
     public UUID getId() {
         return id;
