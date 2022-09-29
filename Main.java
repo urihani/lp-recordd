@@ -1,3 +1,4 @@
+import common.SaisieMorceau;
 import model.Artiste;
 import model.Festival;
 import model.Label;
@@ -49,12 +50,13 @@ public class Main {
                 System.out.println("3. Afficher la liste des artistes");
                 System.out.println("4. Ajouter un artiste à un festival");
                 System.out.println("5. Se deconnecter");
+                System.out.println("6. Ajouter un morceau");
 
                 // On vérifie la valeur saisie par l'utilisateur
                 String choixASaisir = sc.nextLine();
                 int choix = Integer.parseInt(choixASaisir);
 
-                while (choix < 1 || choix > 4) {
+                while (choix < 1 || choix > 6) {
                     System.out.println("Veuillez entrer un choix valide :");
                     choix = sc.nextInt();
                 }
@@ -125,9 +127,10 @@ public class Main {
                         labelConnected = null;
                         labelExist = false;
                         break;
-
+                    case 6:
+                        SaisieMorceau.SaisirMorceau();
+                        break;
                 }
-
             }
         }
     }

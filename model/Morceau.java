@@ -12,35 +12,29 @@ import java.util.UUID;
 public class Morceau {
 
     /**
+     * date d'ajout du morceau
+     */
+    private final LocalDate dateAjout;
+    /**
      * id du morceau
      */
     private UUID id;
-
     /**
      * titre du morceau
      */
     private String titre;
-
     /**
      * durée du morceau
      */
     private LocalTime duree;
-
     /**
      * genre du morceau
      */
     private GENRE_MUSICAL genre;
-
     /**
      * date de sortie du morceau
      */
     private LocalDate dateDeSortie;
-
-    /**
-     * date d'ajout du morceau
-     */
-    private final LocalDate dateAjout;
-
     /**
      * nombre ecoute du morceau
      */
@@ -51,11 +45,14 @@ public class Morceau {
      */
     private int nombreLike;
 
+    private final Artiste artiste;
+
     /**
      * Default constructor
      */
-    public Morceau(String titre, String duree, GENRE_MUSICAL genre, String dateDeSortie) {
+    public Morceau(Artiste artiste, String titre, String duree, GENRE_MUSICAL genre, String dateDeSortie) {
         this.id = UUID.randomUUID();
+        this.artiste = artiste;
         this.titre = titre;
         this.duree = LocalTime.parse(duree);
         this.genre = genre;
