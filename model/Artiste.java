@@ -56,7 +56,15 @@ public class Artiste {
     /**
      * Default constructor
      */
-    public Artiste() {
+    public Artiste(String pseudonyme, String nom, String prenom, String mail, String telephone, int nombreAuditeurs) {
+        this.id = UUID.randomUUID();
+        this.pseudonyme = pseudonyme;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.mail = mail;
+        this.telephone = telephone;
+        this.nombreAuditeurs = nombreAuditeurs;
+        this.dateInscription = LocalDate.now();
     }
 
     public UUID getId() {
@@ -128,7 +136,7 @@ public class Artiste {
      * @return LinkedList<Festival>
      */
     public LinkedList<Festival> getFestivals() {
-        return this.festivals;
+        return festivals;
     }
 
 }

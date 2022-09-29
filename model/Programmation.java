@@ -80,6 +80,14 @@ public class Programmation {
     }
 
     /**
+     * Recupere l'artiste lié à la programmation
+     * @return Artiste
+     */
+    public Artiste getArtiste() {
+        return this.artiste;
+    }
+
+    /**
      * Ajouter un artiste à la programmation
      * @return Artiste
      */

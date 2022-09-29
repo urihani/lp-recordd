@@ -25,7 +25,10 @@ public class Label {
     /**
      * Default constructor
      */
-    public Label() {
+    public Label(String nom) {
+        this.id = UUID.randomUUID();
+        this.nom = nom;
+        this.artistes = new LinkedList<Artiste>();
     }
 
     public UUID getId() {
