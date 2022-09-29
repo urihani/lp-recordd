@@ -49,6 +49,11 @@ public class Artiste {
     private LocalDate dateInscription;
 
     /**
+     * liste des festivals de l'artiste
+     */
+    private LinkedList<Festival> festivals;
+
+    /**
      * Default constructor
      */
     public Artiste() {
@@ -117,4 +122,13 @@ public class Artiste {
     public void setDateInscription(LocalDate dateInscription) {
         this.dateInscription = dateInscription;
     }
+
+    /**
+     * Recupere les festivals de l'artiste où l'artiste est présent en fonction de son pseudonyme
+     * @return LinkedList<Festival>
+     */
+    public LinkedList<Festival> getFestivals() {
+        return this.festivals;
+    }
+
 }
