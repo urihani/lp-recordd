@@ -4,10 +4,10 @@ import data.GENRE_MUSICAL;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.*;
+import java.util.UUID;
 
 /**
- * 
+ *
  */
 public class Morceau {
 
@@ -37,6 +37,11 @@ public class Morceau {
     private LocalDate dateDeSortie;
 
     /**
+     * date d'ajout du morceau
+     */
+    private final LocalDate dateAjout;
+
+    /**
      * nombre ecoute du morceau
      */
     private int nombreEcoute;
@@ -49,7 +54,15 @@ public class Morceau {
     /**
      * Default constructor
      */
-    public Morceau() {
+    public Morceau(String titre, String duree, GENRE_MUSICAL genre, String dateDeSortie) {
+        this.id = UUID.randomUUID();
+        this.titre = titre;
+        this.duree = LocalTime.parse(duree);
+        this.genre = genre;
+        this.dateDeSortie = LocalDate.parse(dateDeSortie);
+        this.dateAjout = LocalDate.now();
+        this.nombreEcoute = 0;
+        this.nombreLike = 0;
     }
 
     public UUID getId() {
@@ -106,5 +119,19 @@ public class Morceau {
 
     public void setNombreLike(int nombreLike) {
         this.nombreLike = nombreLike;
+    }
+
+    @Override
+    public String toString() {
+        return "Morceau{" +
+                "id=" + id +
+                ", titre='" + titre + '\'' +
+                ", duree=" + duree +
+                ", genre=" + genre +
+                ", dateDeSortie=" + dateDeSortie +
+                ", dateAjout=" + dateAjout +
+                ", nombreEcoute=" + nombreEcoute +
+                ", nombreLike=" + nombreLike +
+                '}';
     }
 }
