@@ -1,26 +1,25 @@
 package model;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.UUID;
 
 /**
- * 
+ *
  */
 public class Label {
 
     /**
+     * liste des artistes du label
+     */
+    private final LinkedList<Artiste> artistes;
+    /**
      * id du label
      */
     private UUID id;
-
     /**
      * nom du label
      */
     private String nom;
-
-    /**
-     * liste des artistes du label
-     */
-    private LinkedList<Artiste> artistes;
 
     /**
      * Default constructor
@@ -29,6 +28,8 @@ public class Label {
         this.id = UUID.randomUUID();
         this.nom = nom;
         this.artistes = new LinkedList<Artiste>();
+        artistes.add(new Artiste("Ily", "IlyasTest", "Ilyas", "ilyas@gmail.com", "0781823578", 4));
+        artistes.add(new Artiste("Nat", "NathanTest", "Nathan", "nathan@gmail.com", "0678339875", 4));
     }
 
     public UUID getId() {
@@ -49,6 +50,7 @@ public class Label {
 
     /**
      * Ajouter un artiste au label
+     *
      * @return LinkedList<Artiste>
      */
     public void addArtiste(Artiste artiste) {
@@ -57,6 +59,7 @@ public class Label {
 
     /**
      * Supprimer un artiste du label en fonction de son pseudonyme
+     *
      * @return void
      */
     public void removeArtiste(String pseudonyme) {
@@ -71,6 +74,7 @@ public class Label {
     /**
      * Recuperer un artiste du label en fonction de son pseudonyme
      * Si l'artiste n'existe pas, retourner null
+     *
      * @return Artiste
      */
     public Artiste getArtiste(String pseudonyme) {
@@ -84,6 +88,7 @@ public class Label {
 
     /**
      * Recuperer la liste des artistes du label
+     *
      * @return LinkedList<Artiste>
      */
     public LinkedList<Artiste> getArtistes() {

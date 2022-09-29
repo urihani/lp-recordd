@@ -2,23 +2,44 @@ package common;
 
 import data.GENRE_MUSICAL;
 import model.Artiste;
+import model.Label;
 import model.Morceau;
 
 public class SaisieMorceau {
     private static final java.util.Scanner scanner = new java.util.Scanner(System.in);
     private static final GENRE_MUSICAL genreCourrant = null;
 
-    public static Morceau SaisirMorceau() {
-        Artiste artiste = saisirArtiste();
+    public static Morceau SaisirMorceau(Label label) {
+        Artiste artiste = saisirArtiste(label);
         String titre = saisirTitre();
         GENRE_MUSICAL genre = saisirGenre();
         String duree = saisirDuree();
         String dateDeSortie = saisirDateDeSortie();
-        return new Morceau(artiste, titre, duree, genre, dateDeSortie);
+        Morceau morceau = new Morceau(artiste, titre, duree, genre, dateDeSortie);
+        // print morceau
+        System.out.println(morceau);
+        return morceau;
     }
 
-    public static Artiste saisirArtiste() {
-        return null;
+    public static Artiste saisirArtiste(Label label) {
+        // boucle sur les artistes avec un index
+        // afficher l'index et le nom de l'artiste
+        for (int i = 0; i < label.getArtistes().size(); i++) {
+            System.out.println(i + " - " + label.getArtistes().get(i).getNom());
+        }
+
+        // si la liste est vide on demande de créer un artiste
+        if (label.getArtistes().size() == 0) {
+            System.out.println("Aucun artiste n'a été trouvé. Veuillez en créer un.");
+            System.out.println("Not Implemented");
+        }
+
+        // on demande à l'utilisateur de saisir l'index de l'artiste
+        System.out.println("Veuillez saisir l'index de l'artiste :");
+        String index = scanner.nextLine();
+
+        // on retourne l'artiste correspondant à l'index
+        return label.getArtistes().get(Integer.parseInt(index));
     }
 
     public static String saisirTitre() {

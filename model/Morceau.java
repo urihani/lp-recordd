@@ -15,6 +15,7 @@ public class Morceau {
      * date d'ajout du morceau
      */
     private final LocalDate dateAjout;
+    private final Artiste artiste;
     /**
      * id du morceau
      */
@@ -39,13 +40,10 @@ public class Morceau {
      * nombre ecoute du morceau
      */
     private int nombreEcoute;
-
     /**
      * nombre de like du morceau
      */
     private int nombreLike;
-
-    private final Artiste artiste;
 
     /**
      * Default constructor
@@ -121,7 +119,8 @@ public class Morceau {
     @Override
     public String toString() {
         return "Morceau{" +
-                "id=" + id +
+                "artiste=" + artiste +
+                ", id=" + id +
                 ", titre='" + titre + '\'' +
                 ", duree=" + duree +
                 ", genre=" + genre +
