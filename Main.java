@@ -19,7 +19,7 @@ public class Main {
 
             // Liste des festivals présent dans l'application
             ArrayList<Festival> festivals = new ArrayList<Festival>();
-            festivals.add(new Festival("ldf", dateDebut, dateFin));
+            festivals.add(new Festival(dateDebut, dateFin));
 
             // On créer un bollean pour vérifier que le label existe ou non
             boolean labelExist = false;
@@ -48,8 +48,8 @@ public class Main {
                 System.out.println("2. Supprimer un artiste");
                 System.out.println("3. Afficher la liste des artistes");
                 System.out.println("4. Ajouter un artiste à un festival");
-                System.out.println("5. Afficher la liste des artistes présent à un festival");
-                System.out.println("6. Se deconnecter");
+                System.out.println("5. Se deconnecter");
+                System.out.println("6. Ajouter un morceau");
 
                 // On vérifie la valeur saisie par l'utilisateur
                 String choixASaisir = sc.nextLine();
@@ -75,11 +75,10 @@ public class Main {
                         System.out.println("Veuillez entrer le numéro de téléphone de l'artiste :");
                         String telephone = sc.nextLine();
                         System.out.println("Veuillez entrer le nombre d'auditeurs de l'artiste");
-                        String nbAuditeurs = sc.nextLine();
+                        int nbAuditeurs = sc.nextInt();
 
                         // Créer un nouvel artiste avec toutes ces informations
                         Artiste artiste = new Artiste(pseudonyme, nom, prenom, mail, telephone, nbAuditeurs);
-                        labelConnected.addArtiste(artiste);
 
                         System.out.println("L'artiste a bien été ajouté.");
 
@@ -122,20 +121,6 @@ public class Main {
                         }
                         break;
                     case 5:
-                        System.out.println("Vous avez choisi d'afficher la liste des artistes présent à un festival. Veuillez entrer le nom du festival :");
-                        String nomFestival = sc.nextLine();
-                        // On vérifie que le festival existe
-                        for (Festival festival : festivals) {
-                            if (festival.getNom().equals(nomFestival)) {
-                                // On affiche la liste des artistes
-                                for (Artiste artisteDuFestival : festival.getArtistes()) {
-                                    System.out.println(artisteDuFestival.getPseudonyme());
-                                }
-                                break;
-                            }
-                        }
-                        break;
-                    case 6:
                         System.out.println("Vous avez choisi de vous déconnecter");
                         // On déconnecte le label
                         labelConnected = null;

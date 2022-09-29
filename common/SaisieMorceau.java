@@ -1,6 +1,7 @@
 package common;
 
 import data.GENRE_MUSICAL;
+import model.Artiste;
 import model.Morceau;
 
 public class SaisieMorceau {
@@ -8,11 +9,16 @@ public class SaisieMorceau {
     private static final GENRE_MUSICAL genreCourrant = null;
 
     public static Morceau SaisirMorceau() {
+        Artiste artiste = saisirArtiste();
         String titre = saisirTitre();
         GENRE_MUSICAL genre = saisirGenre();
         String duree = saisirDuree();
         String dateDeSortie = saisirDateDeSortie();
-        return new Morceau(titre, duree, genre, dateDeSortie);
+        return new Morceau(artiste, titre, duree, genre, dateDeSortie);
+    }
+
+    public static Artiste saisirArtiste() {
+        return null;
     }
 
     public static String saisirTitre() {
